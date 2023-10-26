@@ -32,18 +32,65 @@ public class Network {
         return null;
     }
 
+    /**
+     *  Prints the Network in the style of the BIF files provided
+     */
     public void printNetwork() {
+        // Prints all of the variables
         for (Variable v : getVariables()) {
+            // Prints the variable name
             System.out.println("variable " + v.getName() + " {");
-            System.out.println("  type " + v.getType() + " [ " + v.getValues().size() + " ] { " + v.getValues() + " };");
+
+            // Prints the variable type and values
+            System.out.print("  type " + v.getType() + " [ " + v.getValues().size() + " ] { ");
+            List<String> varVals = v.getValues();
+
+            for (int i = 0; i < varVals.size(); i++) {
+                if (i == varVals.size() - 1) {
+                    System.out.println(varVals.get(i) + " };");
+                } else {
+                    System.out.print(varVals.get(i) + ", ");
+                }
+            }
         }
 
+        // Prints all of the probabilities
         for (Probability p : getProbabilities()) {
-            System.out.println("probability ( " + p.getVariable() + " | " + p.getParents() + " ) {");
+            // Prints the probability variable
+            System.out.print("probability ( " + p.getVariable().getName() + " | ");
+
+            // Prints the probability parent variables
+            List<Variable> parents = p.getParents();
+            for (int i = 0; i < parents.size(); i++) {
+                if (i == parents.size() - 1) {
+                    System.out.println(parents.get(i).getName() + " ) {");
+                } else {
+                    System.out.print(parents.get(i).getName() + ", ");
+                }
+            }
             Map<List<String>, List<Float>> distributions = p.getDistributions();
 
+            // Prints the probability distributions
             for (Map.Entry<List<String>, List<Float>> entry : distributions.entrySet()) {
-                System.out.println("  (" + entry.getKey() + " " + entry.getValue() + ";");
+                List<String> values = entry.getKey();
+                List<Float> valueDistributions = entry.getValue();
+
+                System.out.print("  (");
+                for (int i = 0; i < values.size(); i++) {
+                    if (i == values.size() - 1) {
+                        System.out.print(values.get(i) + ") ");
+                    } else {
+                        System.out.print(values.get(i) + ", ");
+                    }
+                }
+
+                for (int i = 0; i < valueDistributions.size(); i++) {
+                    if (i == valueDistributions.size() - 1) {
+                        System.out.println(valueDistributions.get(i) + ";");
+                    } else {
+                        System.out.print(valueDistributions.get(i) + ", ");
+                    }
+                }
             }
         }
     }

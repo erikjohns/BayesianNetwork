@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a969882f-40e6-4f7d-8a9c-d80a8929035d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI446_Project3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Agent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Probability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Scenario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Variable.java" afterDir="false" />
+    <list default="true" id="a969882f-40e6-4f7d-8a9c-d80a8929035d" name="Changes" comment="Working Importer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +69,16 @@
       <option name="presentableId" value="Default" />
       <updated>1698095324761</updated>
       <workItem from="1698095325931" duration="5020000" />
-      <workItem from="1698275358856" duration="5071000" />
+      <workItem from="1698275358856" duration="6001000" />
     </task>
+    <task id="LOCAL-00001" summary="Working Importer">
+      <created>1698281987950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698281987950</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,5 +94,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working Importer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Importer" />
   </component>
 </project>
