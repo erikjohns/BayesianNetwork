@@ -3,8 +3,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Network {
-    private List<Variable> variables = new ArrayList<>();
-    private List<Probability> probabilities = new ArrayList<>();
+    private final List<Variable> variables = new ArrayList<>();
+    private final List<Probability> probabilities = new ArrayList<>();
 
 
     public void addVariable(Variable v) {
@@ -36,7 +36,7 @@ public class Network {
      *  Prints the Network in the style of the BIF files provided
      */
     public void printNetwork() {
-        // Prints all of the variables
+        // Prints all the variables
         for (Variable v : getVariables()) {
             // Prints the variable name
             System.out.println("variable " + v.getName() + " {");
@@ -54,7 +54,7 @@ public class Network {
             }
         }
 
-        // Prints all of the probabilities
+        // Prints all the probabilities
         for (Probability p : getProbabilities()) {
             // Prints the probability variable
             System.out.print("probability ( " + p.getVariable().getName() + " | ");
