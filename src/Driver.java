@@ -7,7 +7,7 @@ public class Driver {
     public static void main(String[] args) {
         String[] fileNames = {"alarm.bif", "child.bif", "hailfinder.bif", "insurance.bif", "win95pts.bif"};
 
-        FileParser parser = new FileParser("./src/Networks/alarm.bif");
+        FileParser parser = new FileParser("Networks/alarm.bif");
         Network network = parser.parseBIF();
 
         HashMap<String, String> littleEvidence = new HashMap<>();
@@ -23,7 +23,7 @@ public class Driver {
         moderateEvidence.put("HREKG", "LOW");
         moderateEvidence.put("HISTORY", "TRUE");
 
-        List<String> query = Arrays.asList("Disease");
+        List<String> query = Arrays.asList("HYPOVOLEMIA", "LVFAILURE", "ERRLOWOUTPUT");
 
         Scenario lowEvidenceScenario = new Scenario(littleEvidence, query);
         Scenario moderateEvidenceScenario = new Scenario(moderateEvidence, query);
