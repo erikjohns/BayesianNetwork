@@ -1,6 +1,10 @@
 import java.util.List;
 import java.util.Map;
 
+/**
+ *  Represents a probability within the network
+ * @author Erik Johns
+ */
 public class Probability {
     private List<Variable> parents;
     private Variable variable;

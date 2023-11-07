@@ -103,7 +103,7 @@ public class FileParser {
 
             List<String> values = new ArrayList<>();
             List<Float> valueDistributions = new ArrayList<>();
-            if (line.contains("table")) {
+            if (line.startsWith("table")) {
                 values.add("table");
 
                 String floatString = line.substring(6, line.length() - 1);

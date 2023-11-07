@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Network {
     private final List<Variable> variables = new ArrayList<>();
@@ -31,6 +30,21 @@ public class Network {
         }
         return null;
     }
+
+    public List<Variable> getEliminationOrder(Scenario scenario) {
+        List<Variable> allVariables = getVariables();
+
+        Set<String> evidenceVariableNames = scenario.getEvidence().keySet();
+        List<String> queryVariableNames = scenario.getQuery();
+
+        List<Variable> nonEvidenceAndNonQueryVariables = allVariables.stream()
+                .filter(variable -> !evidenceVariableNames.contains(variable.getName()))
+                .filter(variable -> !queryVariableNames.contains(variable.getName()))
+                .collect(Collectors.toList());
+
+        return nonEvidenceAndNonQueryVariables;
+    }
+
 
     /**
      *  Prints the Network in the style of the BIF files provided
