@@ -17,11 +17,11 @@ public class Agent {
      * @param scenario The evidence and query for the test
      * @return The results of the variable elimination
      */
-    public Map<List<String>, Float> runVariableElimination(Scenario scenario) {
+    public Factor runVariableElimination(Scenario scenario) {
         VariableElimination variableElimination = new VariableElimination(network);
         List<Variable> eliminationOrder = network.getEliminationOrder(scenario);
 
-        return variableElimination.run(scenario, eliminationOrder);
+        return variableElimination.run(scenario);
     }
 
     /**
@@ -45,10 +45,14 @@ public class Agent {
 
         for (Scenario scenario : scenarios) {
 
-            Map<List<String>, Float> varElimResult = runVariableElimination(scenario);
-            for (Map.Entry<List<String>, Float> entry : varElimResult.entrySet()) {
+            Factor varElimResult = runVariableElimination(scenario);
+            System.out.println(varElimResult);
+
+            /*for (Map.Entry<List<String>, Float> entry : varElimResult.entrySet()) {
                 System.out.println(entry.getKey() + " -> " + entry.getValue());
             }
+
+             */
 
             Map<String, Float> gibbsSamplingResult = runGibbsSampling(scenario, 100000, 1000);
 
