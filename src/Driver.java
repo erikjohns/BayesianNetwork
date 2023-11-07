@@ -13,13 +13,10 @@ public class Driver {
     public static void main(String[] args) {
 
         runAlarm();
-        /*
         runChild();
         runHailfinder();
         runInsurance();
         runWin95Pts();
-
-         */
 
     }
 
